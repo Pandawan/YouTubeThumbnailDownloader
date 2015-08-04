@@ -7,7 +7,7 @@ Please not that this script has only been tested on a mac, it does work on Linux
 I do not know if this script works on Windows (windows users please try it and tell me).
 
 #How to use it
-First of all in your terminal type chmod a+x, do not press enter and drag and drop the script to your terminal, now press enter.
+First of all in your terminal type chmod a+x, add a space, do not press enter yet, drag and drop the script to your terminal, now press enter.
 Launch the script by double clicking it or opening it from the terminal.
 The script will ask you wether you want to download from a video or a playlist
 
