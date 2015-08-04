@@ -30,6 +30,6 @@ Check this link for more info http://creativecommons.org/licenses/by-nc-sa/4.0/
 
 #About Me
 
-My YouTube: http://youtube.com/PandawanFr/"
+My YouTube: http://youtube.com/PandawanFr/
 
-My Twitter: http://twitter.com/PandawanYT/"
+My Twitter: http://twitter.com/PandawanYT/
