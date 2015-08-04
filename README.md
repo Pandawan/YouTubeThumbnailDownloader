@@ -1,6 +1,10 @@
 # YouTube Thumbnail Downloader
 The YouTube Thumbnail Downloader allows you to download any thumbnails from a youtube video.
+
 This script was requested by TheRedstoneScientist.
+
+Please not that this script has only been tested on a mac, it does work on Linux. 
+I do not know if this script works on Windows (windows users please try it and tell me).
 
 #How to use it
 Launch the script by double clicking it or opening it fomr the terminal.
@@ -23,3 +27,9 @@ When the script returns "Successfully downloaded thumbnail(s)!" then you are don
 
 This script is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International.
 Check this link for more info http://creativecommons.org/licenses/by-nc-sa/4.0/
+
+#About Me
+
+My YouTube: http://youtube.com/PandawanFr/"
+
+My Twitter: http://twitter.com/PandawanYT/"
