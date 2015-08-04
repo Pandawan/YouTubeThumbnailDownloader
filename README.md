@@ -17,13 +17,13 @@ The script will ask you wether you want to download from a video or a playlist
 If you want only one video:
   type "video"
   then copy the link to the video and paste it in the terminal
-  The script will then download the thumnbail in the same directory it's in.
   
 If you want to download the thumbnail of all the videos in a playlist:
   type "playlist"
   copy the link of the playlist (note do not copy the link of a video that's in the playlist, to be sure that it's the right link, make sure the link starts like that: https://www.youtube.com/playlist?list=)
   Paste it in the terminal, you will see the id of the video that's currently being downloaded and the progress (It should look like that: Downloading *link* [4/10]).
 
+The script will then download the thumnbail(s) in the same directory it's in and they will have the name of the YT id of the video (I am currently searching for a way to get the name of the video, if you know how to do that, please make a pull request).
 When the script returns "Successfully downloaded thumbnail(s)!" then you are done. 
 
 #License
