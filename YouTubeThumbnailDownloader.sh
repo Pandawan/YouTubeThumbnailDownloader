@@ -7,7 +7,7 @@
 
 prefix="https://i.ytimg.com/vi/" #Link to the yt image database
 suffix="/hqdefault.jpg" #Apparently sometimes it's maxresdefault but using hqdefault because it works
-basedir=$(dirname $0) #Directory wehre the script is being executed
+basedir=$(dirname $0) #Directory where the script is being executed
 
 #colors
 red=`tput setaf 1`
@@ -28,9 +28,12 @@ if [ "$choice" = "video" ]; then
 	
 	full_lnk=$prefix$video_url$suffix
 	
-	echo "${green}Link to picture: $full_lnk"
+	name=$(curl --silent "$link"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _)
+	echo $link
 	
-	curl -o $basedir/$video_url.jpg --silent $full_lnk
+	echo "${green}Downloading: $name.jpg"
+	
+	curl -o $basedir/$name.jpg --silent $full_lnk
 	
 	echo "${green}Successfully downloaded thumbnail!"
 	
@@ -49,13 +52,15 @@ elif [ "$choice" = "playlist" ]; then
 	 do
 		full_lnk=$prefix${ids[c]}$suffix
 		
-		#name=$(curl --silent "http://www.youtube.com/watch?v=${ids[c]}"| grep -o '<title>.*</title>'| sed 's/\(<title>\|<\/title>\)//g') 
+		name=$(curl --silent "https://www.youtube.com/watch?v=${ids[c]}"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _)
+		#echo $name > $basedir/hello.txt
 		
-		echo "Downloading $full_lnk [$c/${#ids[@]}]"
+		#echo "Downloading $full_lnk [$c/${#ids[@]}]"
+		echo "Downloading $name.jpg [$c/${#ids[@]}]"
 		
-		curl -o $basedir/${ids[c]}.jpg --silent $full_lnk
+		#curl -o $basedir/${ids[c]}.jpg --silent $full_lnk
 		
-		curl -o $basedir/$names.jpg --silent $full_lnk
+		curl -o $basedir/$name.jpg --silent $full_lnk
 	 done
 	
 	echo "${green}Successfully downloaded thumbnails!"
