@@ -11,7 +11,7 @@ I do not know if this script works on Windows (windows users please try it and t
 #Update 1.2
 New update! Hooray! This update will change the file's name from ytid.jpg to nameofvideo.jpg fo example, this file: GI9t7Qj_azI.jpg will instead be called Heads | Only one command vanilla mod.jpg 
 
-Note that all names will have underscores instead of spaces and the ' and other special characters will be replaced by a weird code. Also, if the script get stucks on a certain file, you may have to start the process again as the script crashed, restarting will usually fix the problem.  
+Note that all names will have underscores instead of spaces and the ' and other special characters will be replaced by a weird code. Also, if the script get stucks on a certain file, you may have to start the process again as the script crashed, restarting (the script) will usually fix the problem.  
 
 #How to use it
 First of all in your terminal type chmod a+x, add a space, do not press enter yet, drag and drop the script to your terminal, now press enter.
