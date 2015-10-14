@@ -16,7 +16,7 @@ reset=`tput sgr0`
 
 
 echo "${green}Hello and welcome to the Youtube Thumbnail Downloader v1.3 by PandawanFr."
-echo "${red}Update 1.3: Added File support (experimental)"
+echo "${red}Update 1.3.2: Added File support (experimental)"
 
 read -p "${green}Do you want to download from a video, a playlist or a file ? " choice
 
@@ -53,7 +53,7 @@ elif [ "$choice" = "playlist" ]; then
 	 do
 		full_lnk=$prefix${ids[c]}$suffix
 		
-		name=$(curl --silent "https://www.youtube.com/watch?v=${ids[c]}"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _)
+		name=$(curl --silent "https://www.youtube.com/watch?v=${ids[c]}"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _ | tr '/' '|')
 		#echo $name > $basedir/hello.txt
 		
 		#echo "Downloading $full_lnk [$c/${#ids[@]}]"
@@ -80,7 +80,7 @@ elif [ "$choice" = "file" ]; then
 	 do
 		full_lnk=$prefix${ids[c]}$suffix
 		
-		name=$(curl --silent "https://www.youtube.com/watch?v=${ids[c]}"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _)
+		name=$(curl --silent "https://www.youtube.com/watch?v=${ids[c]}"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _ | tr '/' '|')
 		#echo $name > $basedir/hello.txt
 		
 		#echo "Downloading $full_lnk [$c/${#ids[@]}]"
@@ -101,7 +101,7 @@ else
 fi
 
 #Thanks and stuff
-echo "${red}Thanks for using Youtube Thumbnail Downloader v1.3 by PandawanFr!"
+echo "${red}Thanks for using Youtube Thumbnail Downloader v1.3.2 by PandawanFr!"
 echo "${red}My YouTube: http://youtube.com/PandawanFr/"
 echo "${red}My Twitter: http://twitter.com/PandawanYT/"
 echo " "
