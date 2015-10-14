@@ -29,7 +29,7 @@ if [ "$choice" = "video" ]; then
 	
 	full_lnk=$prefix$video_url$suffix
 	
-	name=$(curl --silent "$link"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _)
+	name=$(curl --silent "$link"| grep -o '<meta property="og:title" content=".*">'| sed -e 's/<meta property="og:title" content="\(.*\)">/\1/'| tr " " _ | tr '/' '|')
 	echo $link
 	
 	echo "${green}Downloading: $name.jpg"
