@@ -8,7 +8,10 @@ This script was requested by TheRedstoneScientist.
 Please not that this script has only been tested on a mac, it does work on Linux. 
 I do not know if this script works on Windows (windows users please try it and tell me).
 
-#Update 1.2
+#Latest Update - 1.3.2
+Ok, there are a lot of small changes here. First of all I added file support, IDK if it works really well but it should. You can now give a link to a html page on your computer. Another addition is the support of /s ("/") videos which had a / in their name would not save because / is a character used for directory changes in computer "language". So "/"s are now replaced by "|", which are very similar and don't cause any problems!
+
+#BIG Update - 1.2
 New update! Hooray! This update will change the file's name from ytid.jpg to nameofvideo.jpg fo example, this file: GI9t7Qj_azI.jpg will instead be called Heads | Only one command vanilla mod.jpg 
 
 Note that all names will have underscores instead of spaces and the ' and other special characters will be replaced by a weird code. Also, if the script get stucks on a certain file, you may have to start the process again as the script crashed, restarting (the script) will usually fix the problem.  
