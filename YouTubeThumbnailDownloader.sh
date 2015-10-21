@@ -6,7 +6,8 @@
 #Script requested by TheRedstoneScientist
 
 prefix="https://i.ytimg.com/vi/" #Link to the yt image database
-suffix="/hqdefault.jpg" #Apparently sometimes it's maxresdefault but using hqdefault because it works
+#suffix="/hqdefault.jpg" #Apparently sometimes it's maxresdefault but using hqdefault because it works
+suffix="/maxresdefault.jpg" #Using Maxresdefault as it's better for image quality/size but also because some didn't work with hqdefault (Not sure if it works with all of them either)
 basedir=$(dirname $0) #Directory where the script is being executed
 
 #colors
