@@ -6,8 +6,8 @@
 #Script requested by TheRedstoneScientist
 
 prefix="https://i.ytimg.com/vi/" #Link to the yt image database
-#suffix="/hqdefault.jpg" #Apparently sometimes it's maxresdefault but using hqdefault because it works
-suffix="/maxresdefault.jpg" #Using Maxresdefault as it's better for image quality/size but also because some didn't work with hqdefault (Not sure if it works with all of them either)
+suffixHQ="/hqdefault.jpg" #Apparently sometimes it's maxresdefault but using hqdefault because it works
+suffixMax="/maxresdefault.jpg" #Using Maxresdefault as it's better for image quality/size but also because some didn't work with hqdefault (Not sure if it works with all of them either)
 basedir=$(dirname $0) #Directory where the script is being executed
 
 #colors
@@ -16,10 +16,23 @@ green=`tput setaf 2`
 reset=`tput sgr0`
 
 
-echo "${green}Hello and welcome to the Youtube Thumbnail Downloader v1.3 by PandawanFr."
-echo "${red}Update 1.3.2: Added File support (experimental)"
+echo "${green}Hello and welcome to the Youtube Thumbnail Downloader v1.3.3 by PandawanFr."
+echo "${red}Update 1.3.3: Added hqdefault/maxresdefault option."
 
 read -p "${green}Do you want to download from a video, a playlist or a file ? " choice
+read -p "${green}Do you want to use hqdefault or maxresdefault ? (Only change if you get a grey thumbnail) " defaultChoice
+
+if [ "$defaultChoice" = "hqdefault" ]; then 
+	suffix=$suffixHQ
+elif [ "$defaultChoice" = "maxresdefault" ]; then 
+	suffix=$suffixMax
+else
+	echo "${red}"'Please type "hqdefault" or "maxresdefault"'
+	
+	echo "${reset}"
+fi
+
+
 
 if [ "$choice" = "video" ]; then 
 	#If you want to download only one video	
@@ -36,6 +49,7 @@ if [ "$choice" = "video" ]; then
 	echo "${green}Downloading: $name.jpg"
 	
 	curl -o $basedir/$name.jpg --silent $full_lnk
+	echo $full_lnk
 	
 	echo "${green}Successfully downloaded thumbnail!"
 	
@@ -71,7 +85,7 @@ elif [ "$choice" = "playlist" ]; then
 elif [ "$choice" = "file" ]; then
 	#If you want to download a playlist
 	
-	read -p "${green}Enter the path to the file : " link
+	read -p "${green}Enter the path to the file (experimental): " link
 	
 	#ids=$(curl --silent $link| grep -F '/watch?v='| sed -E 's!.*/watch\?v=([a-zA-Z0-9_-]*).*!\1!'| sort| uniq;) #Not using this one anymore because V is better
 	
@@ -102,7 +116,7 @@ else
 fi
 
 #Thanks and stuff
-echo "${red}Thanks for using Youtube Thumbnail Downloader v1.3.2 by PandawanFr!"
+echo "${red}Thanks for using Youtube Thumbnail Downloader v1.3.3 by PandawanFr!"
 echo "${red}My YouTube: http://youtube.com/PandawanFr/"
 echo "${red}My Twitter: http://twitter.com/PandawanYT/"
 echo " "
